@@ -134,8 +134,10 @@ def get_user(id):
         if user:
             return make_response(jsonify({"user": user.json()}), 200)
         return make_response(jsonify({"message": "user not found"}), 404)
-    except e:
-        return make_response(jsonify({"message": "error getting user"}), 500)
+    except Exception as e:
+        return make_response(
+            jsonify({"message": "error getting user", "error": str(e)}), 500
+        )
 
 
 # update a user
