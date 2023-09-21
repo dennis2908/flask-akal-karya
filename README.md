@@ -1,8 +1,4 @@
 ```
-Docker, Flask
-```
-
-```
 docker compose up --build
 ```
 
